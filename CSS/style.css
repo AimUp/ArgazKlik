@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body {
+	padding: 2%;
+}
+
+header {
+	
+}
+#wrapper{
+    overflow:auto;
+}
+#c1{
+   float:right;
+   text-align: left;
+}
+
+#logeatzeko {
+	float:right;
+}
