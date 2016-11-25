@@ -12,7 +12,6 @@
 				LogIn </br>
 				SignUp
 			</div></br>
-		
 			<header>
 				<center><h1>ARGAZKLIK</h1></center>
 			</header>
