@@ -1,15 +1,16 @@
 <?php
-
-	$nick = $_GET('nick');
+	$nick = $_GET['nick'];
 	
 	//DDBBra konektatu		
-	include "CONNECT.php";
+	include "../CONNECT.php";
 
 	// Datuak jaso
-	$query = "SELECT * FROM erabiltzaileak WHERE nickname = ".$nick;
+	$query = "SELECT * FROM erabiltzaileak WHERE nickname = '".$nick."'";
 		
-	$erantzuna = $conn->query($query);
-
+	if(($erantzuna = $conn->query($query))===FALSE){
+		echo "Errorea konektatzean: ".$conn->error;
+	}
+		
 	if ($erantzuna->num_rows > 0) {
 		echo "txarra";
 	} else {

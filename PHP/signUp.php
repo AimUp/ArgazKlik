@@ -15,7 +15,7 @@
 				Eposta elektronikoa: 
 				<input type="text" id="eposta" name="eposta" size="25" onblur="checkEposta()" required/><font color="red">*</font><br/>
 				Pasahitza: 
-				<input type="password" id="pasahitza" name="pasahitza" size="25" pattern=".{6,16}"/><font color="red">*</font> <br/>
+				<input type="password" id="pasahitza" name="pasahitza" size="25" pattern=".{6,16}" onblur="checkPasahitza()"/><font color="red">*</font> <br/>
 				Pasahitza errepikatu: 
 				<input type="password" id="pasahitzaErrepikatu" name="pasahitzaErrepikatu" size="25" required onblur="pasahitzaBaieztatu()" /><font color="red">*</font> <br/>
 				Argazkia: <input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])"> <br/>

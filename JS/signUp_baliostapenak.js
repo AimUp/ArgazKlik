@@ -8,7 +8,8 @@ function irudiAurrekarga(irudia){
 	document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);
 }
 
-function checkNickname(nick){
+function checkNickname(){
+	var nick = document.getElementById("nick").value;
 	xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if ((xhttp.readyState==4)&&(xhttp.status==200 )){
@@ -21,13 +22,12 @@ function checkNickname(nick){
 			}
 		}
 	};
-	xhttp.open("GET","Balioztapenak/chekNickname.php?nick="+nick, true);
+	xhttp.open("GET","./Balioztapenak/checkNickname.php?nick="+nick, true);
 	xhttp.send();
 }
 
 function checkEposta(eposta){	
-	eposta = document.getElementById("eposta");				
-	postapubli.style="display:inline";
+	var eposta = document.getElementById("eposta").value;
 	if(eposta.value.indexOf("@")===-1 || 
 			eposta.value.substring(0,eposta.value.indexOf("@")).length===0 ||
 			eposta.value.substring(eposta.value.indexOf("@"),eposta.value.length).indexOf(".")===-1 ||
@@ -54,8 +54,9 @@ function checkEposta(eposta){
 	}				
 }
 
-function checkPasahitza(pasahitza){
-	xhttp = new XMLHttpRequest();
+function checkPasahitza(){
+	var pasahitza = document.getElementById("pasahitza").value;
+	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if ((xhttp.readyState==4)&&(xhttp.status==200)){
 			if(xhttp.responseText == "BALIOZKOA"){
@@ -71,13 +72,15 @@ function checkPasahitza(pasahitza){
 	xhttp.send(pasahitza);
 }
 function checkPassErrepikatua(){
-	pass = document.getElementById("pasahitza");
-    passBaieztatu = document.getElementById("pasahitzaErrepikatu"); 
-    if(pass.value != passBaieztatu.value){
+	var pass = document.getElementById("pasahitza").value;
+    var passBaieztatu = document.getElementById("pasahitzaErrepikatu").value; 
+    if(pass != passBaieztatu){
         alert("Pasahitzak ez du kointziditzen");
         pass2Ona = false;
     }
-    pass2Ona = true;
+	else{
+		pass2Ona = true;
+	}
 }
 function checkAll(){
 	checkNickname();
