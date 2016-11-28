@@ -8,7 +8,7 @@
 	<body>
 		<div id='wrapper'>
 			<div id="logeatzeko">
-				LogIn </br>
+				<a href="logIn.php">LogIn</a> </br>
 				<a href="signUp.php">SignUp</a>
 			</div></br>
 			<header>
