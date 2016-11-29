@@ -23,7 +23,7 @@
 		</script>
 	</head>
 	<body>
-		<div>
+		<div id="edukia">
 			<form id="erregistroa" name="erregistroa" method="POST" action="" enctype="multipart/form-data">
 				Nickname:
 				<input type="text" id="nick" name="nick" required /><font color="red">*</font> <br/>

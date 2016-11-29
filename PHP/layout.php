@@ -11,9 +11,11 @@
 				<a href="logIn.php">LogIn</a> </br>
 				<a href="signUp.php">SignUp</a>
 			</div></br>
-			<header>
-				<center><h1>ARGAZKLIK</h1></center>
-			</header>
+			<div id="edukia">
+				<header>
+					<center><h1>ArgazKlik</h1></center>
+				</header>
+			</div>
 		</div>
 	</body>
 </html>
