@@ -6,16 +6,19 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 	</head>
 	<body>
-		<div id='wrapper'>
+		<div id='edukia'>
 			<div id="logeatzeko">
-				<a href="logIn.php">LogIn</a> </br>
-				<a href="signUp.php">SignUp</a>
+				<?php 
+					include "sesioaKonprobatu.php";
+					eremuArrunta();
+				?>
 			</div></br>
-			<div id="edukia">
-				<header>
-					<center><h1>ArgazKlik</h1></center>
-				</header>
-			</div>
+			<header>
+				<center><h1><a class="titulua" href="./layout.php"> ArgazKlik</a></h1></center>
+			</header>
+			<section>
+				
+			</section>
 		</div>
 	</body>
 </html>

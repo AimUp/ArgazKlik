@@ -18,8 +18,8 @@
 			
 			$_SESSION['login_user'] = $nick;
 			
-			echo "<br/><br/><font color='green'>Log In ondo</font>";
-			//header("Location: reviewingQuizzes.php");
+			echo "✔︎";
+			//header("Location: ./profile.php");
 		}
 		else{
 			echo "<br/><br/><font color='red'>Erabiltzaile edota pasahitza okerra</font>";

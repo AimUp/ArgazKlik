@@ -17,13 +17,23 @@
 
 	function eremuArrunta(){
 		if(isset($_SESSION['login_user'])){
-			echo "<a href='handlingQuizes.php'>" . explode('@', $_SESSION['login_user'])[0] . "</a><br/>";
+			echo "<a href='profile.php'>" . explode('@', $_SESSION['login_user'])[0] . "</a><br/>";
 			echo "<a href='logOut.php'>LogOut</a>";
 		}
 		else{
-			echo "<a href='./signIn.php'>Log In</a><br/>";
+			echo "<a href='./logIn.php'>Log In</a><br/>";
 			echo "<a href='./signUp.php'>Sign Up</a>";
 		}
 	}
 
+	function logEremua(){
+		if(isset($_SESSION['login_user'])){
+			header("Location: ./profile.php");
+			exit();
+		}
+		else{
+			echo "<a href='./logIn.php'>Log In</a><br/>";
+			echo "<a href='./signUp.php'>Sign Up</a>";
+		}
+	}
 ?>
