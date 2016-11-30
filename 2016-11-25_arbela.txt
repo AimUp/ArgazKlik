@@ -1,5 +1,0 @@
-"Cuaderno de bitácora"
-
-Garatzen ari garenaren deskribapena (lerro bat) + orduak -> (doc|rtf|odt) -> (Drive|Github|Dropbox|...)
-
-(Eskuliburu soila) + Esteka Hostinger + Esteka Github
