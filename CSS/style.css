@@ -2,19 +2,24 @@
 
 body {
 	padding: 2%;
+	background-image: url(../IMG/background.jpg);
+	background-position: center;
+	background-attachment: fixed;
+	font-family: 'Comic Sans MS';
 }
 
-header {
-	
+#logeatzeko, #edukia {
+	float:center;
+	padding: 0.5%;
+	background-color: white;
+	opacity: 0.4;
 }
-#wrapper{
-    overflow:auto;
-}
-#c1{
-   float:right;
-   text-align: left;
-}
-
 #logeatzeko {
-	float:right;
+	text-align: right;
+	width: 100%;
+}
+#edukia {
+	width: 100%;
+	display: inline-block;
+	opacity: 1.0;
 }

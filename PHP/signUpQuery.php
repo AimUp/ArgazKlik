@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="../JS/signUp_baliostapenak.js"></script>
 	</head>
 	<body>
-		<div>
+		<div id="edukia">
 			<?php
 				//DDBBra konektatu		
 				include "CONNECT.php";

@@ -6,7 +6,7 @@
 		<script type="text/javascript" src="../JS/signUp_baliostapenak.js"></script>
 	</head>
 	<body>
-		<div>
+		<div id="edukia">
 			<form id="erregistroa" name="erregistroa" method="POST" onsubmit="return checkAll()" action="./signUpQuery.php" enctype="multipart/form-data">
 				Nickname:
 				<input type="text" id="nick" name="nick" pattern="([A-Z]|[a-z]|[0-9])*" required/ onblur="checkNickname(nick.value)"><font color="red">*</font> <br/>
