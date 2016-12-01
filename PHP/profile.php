@@ -7,13 +7,12 @@
 		<script>
 			function albumaSortu(){
 				sortzeFrame = document.getElementById("albumaSortuIframe");
-				//alert(sortzeFrame.style.display);
-				//if(sortzeFrame.style.display == "" || sortzeFrame.style.display == "none"){
-					sortzeFrame.style = "display:inside-block;";
-				/*}
-				else{
-					sortzeFrame.style = "none";
-				}*/
+				if(sortzeFrame.style.display == "" || sortzeFrame.style.display == "none"){
+					sortzeFrame.style = "display: inline-block;";
+				}
+				else {
+					sortzeFrame.style = "display: none";
+				}
 			}
 		</script>
 	</head>
