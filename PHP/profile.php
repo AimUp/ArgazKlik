@@ -10,7 +10,7 @@
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
-					eremuArrunta();
+					eremuBabestua();
 				?>
 			</div></br>
 			<header>

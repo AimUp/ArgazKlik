@@ -6,7 +6,7 @@
 
 	function eremuBabestua(){
 		if(isset($_SESSION['login_user'])){
-			echo "<a href='profile.php'>" . explode('@', $_SESSION['login_user'])[0] . "</a>";
+			echo "<a href='profile.php'>" . explode('@', $_SESSION['login_user'])[0] . "</a><br/>";
 			echo "<a href='logOut.php'>LogOut</a>";
 		}
 		else{
