@@ -17,7 +17,9 @@
 						if(xhttp.responseText=="✔︎"){
  							window.location="profile.php";
 						}
-						document.getElementById("erantzuna").innerHTML = xhttp.responseText;
+						else{
+							document.getElementById("erantzuna").innerHTML = xhttp.responseText;
+						}
 					}
 				};
 				xhttp.open("POST","logInQuery.php", true);
