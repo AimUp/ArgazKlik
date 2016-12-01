@@ -1,0 +1,10 @@
+Eskuragarritasuna:
+
+Lehentasuna:
+0-	pribatua: igo duen hark soilik atzi dezake (eta administrariak)
+
+1-	atzipenMugatua: erregistratutako erabiltzaileek ikus dezakete
+	
+2-	custom: egileak definitutako erabiltzaileek soilik atzitu ditzake albuma edota argazkiak
+
+3-	publikoa: edozein erabiltzailek ikus dezake

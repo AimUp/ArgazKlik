@@ -6,7 +6,7 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 	</head>
 	<body>
-		<div id='edukia'>
+		<div id='page-wrap'>
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
@@ -17,7 +17,7 @@
 				<center><h1><a class="titulua" href="./layout.php"> ArgazKlik</a></h1></center>
 			</header>
 			<section>
-				
+				<div id="edukia"></div>
 			</section>
 		</div>
 	</body>

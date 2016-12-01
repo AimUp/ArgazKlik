@@ -27,7 +27,7 @@
 		</script>
 	</head>
 	<body>
-		<div id='edukia'>
+		<div id='page-wrap'>
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
@@ -38,7 +38,7 @@
 				<center><h1><a class="titulua" href="./layout.php"> ArgazKlik</a></h1></center>
 			</header>
 			<section>
-				<div id="formDiv" style="width: 26%">
+				<div id="edukia">
 					<form id="erregistroa" name="erregistroa" method="POST" action="" enctype="multipart/form-data">
 						Nickname:
 						<input type="text" id="nick" name="nick" required /><font color="red">*</font> <br/>

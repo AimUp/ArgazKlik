@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="../JS/signUp_baliostapenak.js"></script>
 	</head>
 	<body>
-		<div id='edukia'>
+		<div id='page-wrap'>
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
@@ -18,7 +18,7 @@
 				<center><h1><a class="titulua" href="./layout.php"> ArgazKlik</a></h1></center>
 			</header>
 			<section>
-				<div id="formDiv">
+				<div id="edukia">
 					<form id="erregistroa" name="erregistroa" method="POST" onsubmit="return checkAll()" action="./signUpQuery.php" enctype="multipart/form-data">
 						Nickname:
 						<input type="text" id="nick" name="nick" pattern="([A-Z]|[a-z]|[0-9])*" required/ onblur="checkNickname(nick.value)"><font color="red">*</font> <br/>
