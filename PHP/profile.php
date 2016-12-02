@@ -6,13 +6,42 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script>
 			function albumaSortu(){
-				sortzeFrame = document.getElementById("albumaSortuIframe");
-				if(sortzeFrame.style.display == "" || sortzeFrame.style.display == "none"){
-					sortzeFrame.style = "display: inline-block;";
+				var albumSortzeFrame = document.getElementById("albumaSortuIframe");
+				if(albumSortzeFrame.style.display == "" || albumSortzeFrame.style.display == "none"){
+					albumSortzeFrame.style = "display: inline-block;";
 				}
 				else {
-					sortzeFrame.style = "display: none";
+					albumSortzeFrame.style = "display: none";
 				}
+			}
+			function albumaIkusi(id){
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function(){
+					if ((xhttp.readyState==4)&&(xhttp.status==200)){
+						document.getElementById("albumEdukia").innerHTML = xhttp.responseText;
+					}
+				};
+				xhttp.open("POST","userAlbumEdukiaIkusi.php", true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("ID="+id);
+			}
+			function argazkiaIgo(albumID){
+				var argazkiaIgoFrame = document.getElementById("argazkiaIgoIframe");
+				if(argazkiaIgoFrame.style.display == "" || argazkiaIgoFrame.style.display == "none"){
+					argazkiaIgoFrame.style = "display: inline-block;";
+				}
+				else {
+					argazkiaIgoFrame.style = "display: none";
+				}
+				
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function(){
+					if ((xhttp.readyState==4)&&(xhttp.status==200)){
+						//document.getElementById("albumEdukia").innerHTML = xhttp.responseText;
+					}
+				};
+				xhttp.open("GET","argazkiaIgo.php?albumaID="+albumID, true);
+				xhttp.send();
 			}
 		</script>
 	</head>
@@ -30,7 +59,7 @@
 			<section>
 				<?php
 					include "userInfoQuery.php"; 
-					include "userAlbumQuery.php"; 
+					include "userAlbumQuery.php";
 				?>
 				<div id="erabNav">
 					<p><label class="balioa"><?php echo "<img src='data:Argazkia/jpeg;base64,".base64_encode($Argazkia)."' width='100px' />"; ?></label></p>
@@ -41,19 +70,22 @@
 				<div id="edukia">
 					<input type="button" onclick="albumaSortu()" value="Album berria sortu"><br>
 					<iframe id="albumaSortuIframe" src="albumaSortu.php" style="display:none"></iframe>
-
 					<p> 
 					<?php
 						if ($erantzuna->num_rows > 0) {
 							while($lerroa = $erantzuna->fetch_assoc()) {
+								echo "<div onclick='albumaIkusi(".$lerroa['ID'].")'>";
 								echo "<img src='../IMG/Folder.png' width='50px'/><br/>";
 								echo $lerroa['Izena']."<br/>";
 								echo $lerroa['Egilea']."<br/>";
 								echo $lerroa['SorreraData']."<br/><br/>";
+								echo "</div>";
 							}
 						}
 				 	?>
-					</p>
+					</p><br>
+					<div id="albumEdukia"></div><br>
+					<iframe id="argazkiaIgoIframe" src="argazkiaIgo.php" style="display:none"></iframe>
 				</div>
 			</section>			
 	</body>
