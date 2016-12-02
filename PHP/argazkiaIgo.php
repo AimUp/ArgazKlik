@@ -6,7 +6,6 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script>
 			var albumID = window.location.search.substr(1);
-			alert(albumID);
 			function irudiAurrekarga(irudia){
 				document.getElementById('argazkiAurrekarga').style.display = 'inline';
 				document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);

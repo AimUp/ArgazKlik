@@ -36,4 +36,22 @@
 			echo "<a href='./signUp.php'>Sign Up</a>";
 		}
 	}
+
+	function adminEremua(){
+		if(isset($_SESSION['login_user'])){
+			if (isset($_SESSION['user_type'])=='administraria') {
+				echo "<a href='profile.php'>" . explode('@', $_SESSION['login_user'])[0] . "</a><br/>";
+				echo "<a href='logOut.php'>LogOut</a>";
+			}
+			else{
+				header("Location: ./layout.php");
+				exit();
+			}
+		}
+		else{
+			header("Location: ./layout.php");
+			exit();
+		}
+	}
+	
 ?>

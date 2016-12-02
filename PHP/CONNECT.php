@@ -7,13 +7,13 @@
 	$ddbb = "argazklik";
 	
 	//HOSTINGER
-	/*$serverH = "mysql.hostinger.es";
-	$userH = "u823979798_admin";
+	$serverH = "mysql.hostinger.es";
+	$userH= "u267394054_admin";
 	$passH = "adminroot";
-	$ddbbH = "u823979798_quiz";*/
+	$ddbbH = "u267394054_klik";
 	
-	//$conn = new mysqli($serverH, $userH, $passH, $ddbbH); //HOSTINGER
-	$conn = new mysqli($servername, $username, $password, $ddbb);
+	//$conn = new mysqli($serverH, $userH, $passH, $ddbbH); 		//HOSTINGER
+	$conn = new mysqli($servername, $username, $password, $ddbb); 	//LOCALHOST
 	
 	//Konexioa konprobatu
 	if ($conn->connect_error) {

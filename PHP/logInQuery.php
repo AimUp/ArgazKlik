@@ -17,6 +17,7 @@
 			if(session_status() == PHP_SESSION_NONE) session_start();
 			
 			$_SESSION['login_user'] = $nick;
+			$_SESSION['user_type'] = $lerroa["Mota"];
 			
 			echo "✔︎";
 			//header("Location: ./profile.php");
