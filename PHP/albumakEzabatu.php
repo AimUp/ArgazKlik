@@ -1,7 +1,13 @@
 <?php
 
 	include "CONNECT.php";
-	$query = "SELECT * FROM albumak";
+
+	if($_GET['album']!="undefined" && $_GET['album']!=""){
+		$query = "SELECT * FROM albumak WHERE izena LIKE'". $_GET['album'] ."%'";
+	}
+	else{
+		$query = "SELECT * FROM albumak";
+	}
 
 	$erantzuna = $conn->query($query);
 	
@@ -20,4 +26,8 @@
 			echo "<br/><hr><br/>";
 		}
 	}
+	else{
+		echo "<center><font class='errorea'>Albumik ez</font></center>";
+	}
+
 ?>

@@ -21,22 +21,15 @@
     ;
 }
 
-#bilatuText, #bilatuButton {
-    display:block;
+.bilatuText {
+	display: none;
     font:1.2em 'Montserrat Alternates';
-}
-
-#bilatuText {
 	width: 130px;
 	flex:1;
 	padding:0.6em;
 	border:0.2em solid rgb(26, 188, 156);
 }
 
-#bilatuButton {
-    padding:0.6em 0.8em;
-    background-color:rgb(26, 188, 156);
-
-    color:white;
-    border:none;
+.bilatuText:focus {
+	outline:0;
 }

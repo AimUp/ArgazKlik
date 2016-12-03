@@ -9,4 +9,5 @@
 	if($conn->query($query) === FALSE){
 		echo "Datuak ez dira ezabatu: " . $conn->error;
 	}
+	
 ?>

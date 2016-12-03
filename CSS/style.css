@@ -24,6 +24,11 @@ section{
 	font-size: 30px;
 }
 
+.errorea {
+	font: 15px arial;
+	font-weight: bold;
+}
+
 #logeatzeko {
 	float:center;
 	padding: 0.5%;

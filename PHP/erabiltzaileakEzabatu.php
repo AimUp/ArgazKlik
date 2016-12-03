@@ -1,10 +1,16 @@
 <?php
 
 	include "CONNECT.php";
-	$query = "SELECT * FROM erabiltzaileak WHERE mota='bazkidea'";
+
+	if($_GET['erabiltzailea']!="undefined" && $_GET['erabiltzailea']!=""){
+		$query = "SELECT * FROM erabiltzaileak WHERE mota='bazkidea' AND nickname LIKE '".$_GET['erabiltzailea']."%'";
+	}
+	else{
+		$query = "SELECT * FROM erabiltzaileak WHERE mota='bazkidea'";
+	}
 
 	$erantzuna = $conn->query($query);
-	
+		
 	if ($erantzuna->num_rows > 0) {
 		while ($lerroa = $erantzuna->fetch_assoc()) {
 			echo "<form id='form' name='form' method='post'>";
@@ -19,4 +25,8 @@
 			echo "<br/><hr><br/>";
 		}
 	}
+	else{
+		echo "<center><font class='errorea'>Erabiltzailerik ez</font></center>";
+	}
+	
 ?>

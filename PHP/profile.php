@@ -50,7 +50,7 @@
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
-					eremuBabestua();
+					bazkideEremua();
 				?>
 			</div></br>
 			<header>

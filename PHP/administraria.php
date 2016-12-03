@@ -8,31 +8,33 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/botoiak.css' />
 		<script>
 			function erabiltzaileakErakutzi(){
-				ezabatzeDiv = document.getElementById("ezabatzeDiv");
-				ezabatzeDiv.style = "display: block;";
+				document.getElementById("ErabBilatuText").style = "display: block";
+				document.getElementById("AlbumBilatuText").style = "display: none";
+				erabiltzailea = document.getElementById("ErabBilatuText").value;
+				document.getElementById("ezabatzeDiv").style = "display: block;";
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						ezabatzeDiv.style = "display: inline-block;";
-						document.getElementById("bilatuText").placeholder = "Ezabatzeko erabiltzailea bilatu";
-						document.getElementById("erabiltzaileakDiv").innerHTML = xhttp.responseText;
+						document.getElementById("ErabBilatuText").placeholder = "Ezabatzeko erabiltzailea bilatu";
+						document.getElementById("informazioDiv").innerHTML = xhttp.responseText;
 					}
 				};
-				xhttp.open("GET","erabiltzaileakEzabatu.php", true);
+				xhttp.open("GET","erabiltzaileakEzabatu.php?erabiltzailea="+erabiltzailea, true);
 				xhttp.send();
 			}
 			function albumakErakutzi(){
-				ezabatzeDiv = document.getElementById("ezabatzeDiv");
-				ezabatzeDiv.style = "display: block;";
+				document.getElementById("AlbumBilatuText").style = "display: block";
+				document.getElementById("ErabBilatuText").style = "display: none";
+				album = document.getElementById("AlbumBilatuText").value;
+				document.getElementById("ezabatzeDiv").style = "display: block;";
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						ezabatzeDiv.style = "display: inline-block;";
-						document.getElementById("bilatuText").placeholder = "Ezabatzeko albuma bilatu";
-						document.getElementById("erabiltzaileakDiv").innerHTML = xhttp.responseText;
+						document.getElementById("AlbumBilatuText").placeholder = "Ezabatzeko albuma bilatu";
+						document.getElementById("informazioDiv").innerHTML = xhttp.responseText;
 					}
 				};
-				xhttp.open("GET","albumakEzabatu.php", true);
+				xhttp.open("GET","albumakEzabatu.php?album="+album, true);
 				xhttp.send();
 			}
 
@@ -40,12 +42,11 @@
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						alert(xhttp.responseText);
+						erabiltzaileakErakutzi();
 					}
 				};
 				xhttp.open("GET","ezabatuErabiltzaileQuery.php?nick="+nick, true);
 				xhttp.send();
-				erabiltzaileakErakutzi();
 				return false;
 			}
 
@@ -53,12 +54,11 @@
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						alert(xhttp.responseText);
+						albumakErakutzi();
 					}
 				};
 				xhttp.open("GET","ezabatuAlbumQuery.php?ID="+ID, true);
 				xhttp.send();
-				albumakErakutzi();
 				return false;
 			}
 		</script>
@@ -78,17 +78,17 @@
 				<div id="" style="text-align: center;">
 					<button class="botoia botoiBerdea" style="opacity: 0.6; cursor: not-allowed;" onclick="">Administraria Sortu</button>
 
-					<button class="botoia botoiGorria" onclick="erabiltzaileakErakutzi()">Erabiltzailea Ezabatu</button>
+					<button class="botoia botoiGorria" onclick="document.getElementById('ErabBilatuText').value = '';erabiltzaileakErakutzi()">Erabiltzailea Ezabatu</button>
 
-					<button class="botoia botoiGorria" onclick="albumakErakutzi()">Albuma Ezabatu</button>
+					<button class="botoia botoiGorria" onclick="document.getElementById('AlbumBilatuText').value = ''; albumakErakutzi()">Albuma Ezabatu</button>
 				</div>
 				<div id="ezabatzeDiv">
 					<div class="bilatuDiv" id="bilatuDiv">
-  						<input type='text' id='bilatuText' placeholder='Ezabatzeko erabiltzailea bilatu' />
-  						<button type='button' id='bilatuButton'>Bilatu!</button>
+  						<input type='text' class="bilatuText" id='ErabBilatuText' placeholder='Ezabatzeko erabiltzailea bilatu' onkeyup="erabiltzaileakErakutzi()" />
+  						<input type='text' class="bilatuText" id='AlbumBilatuText' placeholder='Ezabatzeko erabiltzailea bilatu' onkeyup="albumakErakutzi()" />
 					</div>
 
-					<div id="erabiltzaileakDiv"> </div>	
+					<div id="informazioDiv"> </div>	
 				</div>
 			</section>			
 	</body>
