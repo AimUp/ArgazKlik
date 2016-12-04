@@ -14,35 +14,6 @@
 					albumSortzeFrame.style = "display: none";
 				}
 			}
-			function albumaIkusi(id){
-				xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function(){
-					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						document.getElementById("albumEdukia").innerHTML = xhttp.responseText;
-					}
-				};
-				xhttp.open("POST","userAlbumEdukiaIkusi.php", true);
-				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send("ID="+id);
-			}
-			function argazkiaIgo(albumID){
-				var argazkiaIgoFrame = document.getElementById("argazkiaIgoIframe");
-				if(argazkiaIgoFrame.style.display == "" || argazkiaIgoFrame.style.display == "none"){
-					argazkiaIgoFrame.style = "display: inline-block;";
-				}
-				else {
-					argazkiaIgoFrame.style = "display: none";
-				}
-				
-				xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function(){
-					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						//document.getElementById("albumEdukia").innerHTML = xhttp.responseText;
-					}
-				};
-				xhttp.open("GET","argazkiaIgo.php?albumaID="+albumID, true);
-				xhttp.send();
-			}
 		</script>
 	</head>
 	<body>
@@ -62,10 +33,18 @@
 					include "userAlbumQuery.php";
 				?>
 				<div id="erabNav">
-					<p><label class="balioa"><?php echo "<img src='data:Argazkia/jpeg;base64,".base64_encode($Argazkia)."' width='100px' />"; ?></label></p>
-					<p><label class="parametroa">Nick: </label> <label class="balioa"><?php echo $Nick; ?></label></p>
-					<p><label class="parametroa">Eposta: </label> <label class="balioa"><?php echo $Eposta; ?></label></p>
-					<p><label class="parametroa">Izen Abizenak: </label> <label class="balioa"><?php echo $IzenAbizen; ?></label></p>
+					<table>
+						<tr>
+							<td rowspan="4" style="padding-right: 100px"><?php echo "<img src='data:Argazkia/jpeg;base64,".base64_encode($Argazkia)."' width='200px' />"; ?></td>
+						    <td><label class="parametroa">Nick: </label> <label class="balioa"><?php echo $Nick; ?></label></td>
+						</tr>
+						<tr>
+						    <td><label class="parametroa">Eposta: </label> <label class="balioa"><?php echo $Eposta; ?></label></td>
+						</tr>
+						<tr>
+							<td><label class="parametroa">Izen Abizenak: </label> <label class="balioa"><?php echo $IzenAbizen; ?></label></td>
+						</tr>
+					</table>
 				</div>
 				<div id="edukia">
 					<input type="button" onclick="albumaSortu()" value="Album berria sortu"><br>
@@ -73,19 +52,21 @@
 					<p> 
 					<?php
 						if ($erantzuna->num_rows > 0) {
-							while($lerroa = $erantzuna->fetch_assoc()) {
-								echo "<div onclick='albumaIkusi(".$lerroa['ID'].")'>";
-								echo "<img src='../IMG/Folder.png' width='50px'/><br/>";
+							echo "<table class='albumTable'><tr>";
+							while($lerroa = $erantzuna->fetch_assoc()) {			
+								echo "<td>";
+								echo "<div>";
+								echo "<img class='folder' src='../IMG/Folder.png' onclick='window.location=\"userAlbumEdukiaIkusi.php?ID=".$lerroa['ID']."&izena=".$lerroa['Izena']."\"' width='50px'/><br/>";
 								echo $lerroa['Izena']."<br/>";
 								echo $lerroa['Egilea']."<br/>";
 								echo $lerroa['SorreraData']."<br/><br/>";
 								echo "</div>";
+								echo "<td>";
 							}
+							echo "</tr></table>";
 						}
 				 	?>
-					</p><br>
-					<div id="albumEdukia"></div><br>
-					<iframe id="argazkiaIgoIframe" src="argazkiaIgo.php" style="display:none"></iframe>
+					</p>
 				</div>
 			</section>			
 	</body>

@@ -8,9 +8,17 @@ body {
 	font-family: Calibri;
 }
 
-section{
+section {
 	background-color:rgba(255, 255, 255, 0.6);
 	padding: 5%;
+}
+
+.albumTable { 
+	border: solid 0px black;
+	max-width:100%;
+	display:block;
+	overflow: scroll;
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.5);
 }
 
 .titulua {
@@ -26,6 +34,19 @@ section{
 
 .errorea {
 	font: 15px arial;
+	font-weight: bold;
+}
+
+.folder {
+	-webkit-filter: drop-shadow(2px 2px 0px #222);
+}
+
+.folder:active {
+ 	transform: translate(2px, 2px);
+ 	-webkit-filter: none;
+}
+
+.parametroa {
 	font-weight: bold;
 }
 
@@ -72,5 +93,5 @@ hr {
 
 iframe {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 }

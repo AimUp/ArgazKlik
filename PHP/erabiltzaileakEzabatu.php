@@ -3,10 +3,10 @@
 	include "CONNECT.php";
 
 	if($_GET['erabiltzailea']!="undefined" && $_GET['erabiltzailea']!=""){
-		$query = "SELECT * FROM erabiltzaileak WHERE mota='bazkidea' AND nickname LIKE '".$_GET['erabiltzailea']."%'";
+		$query = "SELECT * FROM erabiltzaileak WHERE nickname LIKE '".$_GET['erabiltzailea']."%'";
 	}
 	else{
-		$query = "SELECT * FROM erabiltzaileak WHERE mota='bazkidea'";
+		$query = "SELECT * FROM erabiltzaileak";
 	}
 
 	$erantzuna = $conn->query($query);
@@ -18,7 +18,12 @@
 			echo "<b>".$lerroa['Nickname']."</b>  ";
 			echo $lerroa['Eposta']."  ";
 			echo $lerroa['IzenAbizenak']."  ";
-			echo "<button class='ezabatuBotoia ezabatuBotoiEfektua' onclick='return ezabatuErabiltzaile(nick.value)'>EZABATU</button>";
+			if($lerroa['Mota']=="administraria"){
+				echo "<button class='ezabatuBotoia ezabatuBotoiEfektua' style='opacity: 0.6; cursor: not-allowed;' onclick='return false'>EZABATU</button>";
+			}
+			else{
+				echo "<button class='ezabatuBotoia ezabatuBotoiEfektua' onclick='return ezabatuErabiltzaile(nick.value)'>EZABATU</button>";
+			}
 			echo "<input type='text' id='nick' value='".$lerroa['Nickname']."' style='display:none'>";
 			echo "</form>";
 
