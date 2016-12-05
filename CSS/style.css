@@ -25,10 +25,10 @@ section {
 	font-variant:small-caps;
 	text-decoration: none;
 	color: #333333;
+	transition-duration: 0.4s;
 }
 
 .titulua:hover {
-	transition-duration: 0.4s;
 	font-size: 30px;
 }
 
@@ -38,12 +38,13 @@ section {
 }
 
 .folder {
-	-webkit-filter: drop-shadow(2px 2px 0px #222);
+	filter: drop-shadow(2px 2px 0px #222);
+	transition-duration: 0.2s;
 }
 
 .folder:active {
  	transform: translate(2px, 2px);
- 	-webkit-filter: none;
+ 	filter: none;
 }
 
 .parametroa {

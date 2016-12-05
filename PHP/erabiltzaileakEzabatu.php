@@ -19,10 +19,10 @@
 			echo $lerroa['Eposta']."  ";
 			echo $lerroa['IzenAbizenak']."  ";
 			if($lerroa['Mota']=="administraria"){
-				echo "<button class='ezabatuBotoia ezabatuBotoiEfektua' style='opacity: 0.6; cursor: not-allowed;' onclick='return false'>EZABATU</button>";
+				echo "<button class='ezabatuBotoia' style='opacity: 0.6; cursor: not-allowed;' onclick='return false'>EZABATU</button>";
 			}
 			else{
-				echo "<button class='ezabatuBotoia ezabatuBotoiEfektua' onclick='return ezabatuErabiltzaile(nick.value)'>EZABATU</button>";
+				echo "<button class='ezabatuBotoia' onclick='return ezabatuErabiltzaile(nick.value)'>EZABATU</button>";
 			}
 			echo "<input type='text' id='nick' value='".$lerroa['Nickname']."' style='display:none'>";
 			echo "</form>";

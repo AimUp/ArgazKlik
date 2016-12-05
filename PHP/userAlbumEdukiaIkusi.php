@@ -41,14 +41,25 @@
 					echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$albumID."' style='display:block;'></iframe>";
 					
 					if ($erantzuna->num_rows > 0) {
+						echo "<center><table><tr>";
+						$kont = 0;
 						while($lerroa = $erantzuna->fetch_assoc()) {
+							if($kont==4){
+								echo "</tr><tr>";
+								$kont = 1;	
+							}
+							else{
+								$kont ++;	
+							}
+							echo "<td>";
 							echo "<div onclick='argazkiaIkusi(".$lerroa['ID'].")'><br/>";
-							echo "<img src='data:Argazkia/jpeg;base64,".base64_encode( $lerroa['Argazkia'] )."' width='250px' /><br/>";
+							echo "<img src='data:Argazkia/jpeg;base64,".base64_encode( $lerroa['Argazkia'] )."' width='250px' onclick='window.location=\"argazkiaIkusi.php?ID=".$lerroa['ID']."\"'/><br/>";
 							echo $lerroa['Deskribapena']."<br/>";
 							echo $lerroa['Egilea']."<br/>";
 							echo $lerroa['IgoeraData']."<br/><br/>";
-							echo "</div>";
+							echo "</div><td>";
 						}
+						echo "</table></center>";
 					}
 					else{
 						echo "<br><br><center class='errorea'>Ez daukazu argazkirik</center><br>";

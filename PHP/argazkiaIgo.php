@@ -18,14 +18,11 @@
 				}
 			}*/
 			function checkArgazkia(){
-				if(document.getElementById('argazkia').files[0]!=null){
-					alert("ondo");
-					return true;
-				}
-				else{
+				if(document.getElementById('argazkia').files[0]==null){
 					document.getElementById("errorea").innerHTML = "<center class='errorea'>Argazki bat aukeratu</center><br>";
 					return false;
 				}
+				return true;
 			}
 		</script>
 	</head>

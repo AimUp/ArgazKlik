@@ -19,7 +19,7 @@
 			echo "<b>".$lerroa['Egilea']."</b>  ";
 			echo $lerroa['Eskuragarritasuna']."  ";
 			echo $lerroa['SorreraData']."  ";
-			echo "<button class='ezabatuBotoia ezabatuBotoiEfektua' onclick='return ezabatuAlbum(ID.value)'>EZABATU</button>";
+			echo "<button class='ezabatuBotoia' onclick='return ezabatuAlbum(ID.value)'>EZABATU</button>";
 			echo "<input type='text' id='ID' value='".$lerroa['ID']."' style='display:none'>";
 			echo "</form>";
 

@@ -8,7 +8,6 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
@@ -43,10 +42,15 @@
     font-weight: bold;
     text-align: center;
     border-radius: 6px;
+    transition-duration: 0.4s;
 }
 
-.ezabatuBotoia:hover{
+.ezabatuBotoia:hover {
 	background-color: #e53e32;
+}
+
+.ezabatuBotoia:focus {
+    outline:0;
 }
 
 .ezabatuBotoia:active {
