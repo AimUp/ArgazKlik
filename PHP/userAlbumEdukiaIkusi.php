@@ -14,6 +14,16 @@
 					argazkiaIgoFrame.style = "display: none";
 				}
 			}
+			function argazkiaIkusi(argazkiID){
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function(){
+					if ((xhttp.readyState==4)&&(xhttp.status==200 )){
+						document.getElementById("argazkia").innerHTML = xhttp.responseText;
+					}
+				};
+				xhttp.open("GET","../PHP/argazkiaIkusiQuery.php?ID="+argazkiID, true);
+				xhttp.send();			
+			}
 		</script>
 	</head>
 	<body>
@@ -53,20 +63,21 @@
 							}
 							echo "<td>";
 							echo "<div onclick='argazkiaIkusi(".$lerroa['ID'].")'><br/>";
-							echo "<img src='data:Argazkia/jpeg;base64,".base64_encode( $lerroa['Argazkia'] )."' width='250px' onclick='window.location=\"argazkiaIkusi.php?ID=".$lerroa['ID']."\"'/><br/>";
+							echo "<img src='data:Argazkia/jpeg;base64,".base64_encode( $lerroa['Argazkia'] )."' width='250px' height='auto'/><br/>";
 							echo $lerroa['Deskribapena']."<br/>";
 							echo $lerroa['Egilea']."<br/>";
 							echo $lerroa['IgoeraData']."<br/><br/>";
 							echo "</div><td>";
 						}
-						echo "</table></center>";
+						echo "</tr></table></center>";
+						echo "<div id='argazkia'></div>";
 					}
 					else{
 						echo "<br><br><center class='errorea'>Ez daukazu argazkirik</center><br>";
 					}
 
 				?>
-			</section>			
+			</section>
 	</body>
 </html>
 
