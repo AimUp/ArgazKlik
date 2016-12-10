@@ -16,7 +16,7 @@
 	$query = "INSERT INTO albumak VALUES ('','$izena', '$egilea', '$eskurag', '$data');";
 
 	if($conn->query($query) === TRUE) {
-		echo "<h2>Datuak ondo sartu dira</h2> <br><a href='layout.php'> Orrialde nagusira bueltatu </a>";
+		echo "<h2>Datuak ondo sartu dira</h2>";
 	}
 	else{
 		echo "<h2>Datuak ez dira sartu: </h2><br>" . $conn->error;

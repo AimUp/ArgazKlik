@@ -23,8 +23,8 @@
 					document.getElementById("errorea").innerHTML = "<center class='errorea'>Argazki bat aukeratu</center><br>";
 					return false;
 				}
-				if(argazkia.size > 1000000){
-					document.getElementById("errorea").innerHTML = "<center class='errorea'>Argazkia handiegia da. 1MB baino txikiagoko argazki bat aukeratu, mesedez.</center><br>";
+				if(argazkia.size > 777000){
+					document.getElementById("errorea").innerHTML = "<center class='errorea'>Argazkia handiegia da. 777KB baino txikiagoko argazki bat aukeratu, mesedez.</center><br>";
 					return false;
 				}
 				return true;
