@@ -1,8 +1,7 @@
 <?php
-
 	include "CONNECT.php";
 
-	$query = "SELECT Nickname, Eposta, IzenAbizenak, Argazkia FROM erabiltzaileak WHERE Nickname='".$_SESSION['login_user']."'";
+	$query = "SELECT Nickname, Eposta, IzenAbizenak, Argazkia FROM erabiltzaileak WHERE Nickname='".$_GET['user']."'";
 
 	$erantzuna = $conn->query($query);
 

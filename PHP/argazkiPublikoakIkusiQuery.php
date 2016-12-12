@@ -22,13 +22,8 @@
 				$kont ++;	
 			}
 			echo "<td>";
-			echo "	<label style='margin-top:50px; text-align: left;' onclick='albumaIkusi(".$lerroa['albumID'].",\"".$lerroa['Izena']."\")'><b>". $lerroa['Izena'] ."</b> albumetik: </label><br>					
-					<img src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' style='width: 200px;' onclick='argazkiaIkusi(".$lerroa['argazkiID'].")' /><br/>
-					<label style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b>, </label>
-					<label style='margin-top:50px; text-align: left;'>". $lerroa['IgoeraData'] ."</label><br/>";
-			if($lerroa['Deskribapena']!=""){
-				echo "<p style='display: inline-block; padding: 3px; width: 200px; min-height:20px; border: solid 1px black; text-align:left'>". $lerroa['Deskribapena'] ."</p>";
-			}
+			echo "	<img class='cursorPointer' src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' style='width: 200px;' onclick='argazkiaIkusi(".$lerroa['argazkiID'].")' /><br/>
+					<label class='cursorPointer' onclick=\"window.location='profile.php?user=". $lerroa['Egilea'] ."'\" style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b></label> - <label class='cursorPointer' style='margin-top:50px; text-align: left;' onclick='albumaIkusi(".$lerroa['albumID'].",\"".$lerroa['Izena']."\")'><b>". $lerroa['Izena'] ."</b></label>";
 			echo "</td>";
 		}
 		echo "</tr></table></center>";

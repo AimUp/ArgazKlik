@@ -20,13 +20,9 @@
 				$kont ++;	
 			}
 			echo "<td>";
-			echo "	<label style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b>-ek igota </label>
-					<label style='margin-top:50px; text-align: left;'>". $lerroa['IgoeraData'] ." datan.</label><br/>
-					<img src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' style='height: 200px;' /><br/>";
-			if($lerroa['Deskribapena']!=""){
-				echo "<p style='width:200px; margin-top:10px; min-height:20px; border: solid 1px black; text-align:left;'>". $lerroa['Deskribapena'] ."</p>";
-			}
-			echo "</td>";					
+			echo "	<img class='cursorPointer' src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' style='width: 200px;' onclick='argazkiaIkusi(".$lerroa['argazkiID'].")' /><br/>
+					<label class='cursorPointer' style='margin-top:50px; text-align: left;' onclick='albumaIkusi(".$lerroa['albumID'].",\"".$lerroa['Izena']."\")'><b>". $lerroa['Izena'] ."</b></label>";
+			echo "</td>";
 		}
 		echo "</tr></table></center>";
 	}

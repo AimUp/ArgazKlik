@@ -32,7 +32,7 @@
 			<section>
 				<?php
 					include "albumPribatuaIkusiQuery.php";
-				?>				
+				?>
 			</section>
 			<div id="argazkiHandiaPantailaOsoa" style="visibility:hidden" onclick="argazkiHandiaPantailaOsoaItxi()">
 				<div id="argazkiHandia" onclick="argazkiaEtiketatu()">

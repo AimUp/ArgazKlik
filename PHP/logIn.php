@@ -15,7 +15,7 @@
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200)){
 						if(xhttp.responseText=="✔︎"){
- 							window.location="profile.php";
+ 							window.location="profile.php?user="+nick;
 						}
 						else{
 							document.getElementById("erantzuna").innerHTML = xhttp.responseText;
