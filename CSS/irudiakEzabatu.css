@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;
+}
+
+.show-image:hover img{
+    opacity:0.5;
+}
+
+.show-image:hover input {
+    display: block;
+}
+
+.show-image input {
+    background-color: #f44336;
+    border: none;
+    color: black;
+    padding: 3px 3px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    width: 80px;
+    position:absolute;
+    display:none;
+
+    top:50%;
+    left:60px;
+}
+
+.show-image input:hover {
+   background-color: #e53e32;
+}
+
+.show-image input:focus {
+  outline:0;
+}
+
+.show-image input:active {
+   box-shadow: inset 0px 10px 20px #9b2920;
+}
