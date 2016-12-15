@@ -1,8 +1,5 @@
 <?php
 	
-	echo "<input type='button' onclick='argazkiaIgo(".$_GET['albumID'].")' value='Argazkia igo' /><br>";
-	echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe>";
-
 	include "CONNECT.php";
 			
 	$query = "SELECT ID, Egilea, Argazkia, IgoeraData, Deskribapena "
@@ -10,12 +7,19 @@
 			."WHERE albumID = ".$_GET['albumID']." "
 			."ORDER BY IgoeraData DESC";
 		
-	$erantzuna = $conn->query($query);
+	$erantzuna = $conn->query($query);	
+	
+	
+	
+	echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
 
+	echo "<input type='button' class='btnArgIgo' onclick='argazkiaIgo(".$_GET['albumID'].")' value='Argazkia igo' /><br>";
+	
 	if ($erantzuna->num_rows > 0) {
-		echo "<label style='margin-top:50px; text-align: center;'><h2>".$_GET['albumIzena']."</h2></label>";
+		echo "<label class='albumIzena'><h2>".$_GET['albumIzena']."</h2></label>";
 		echo "<center><table><tr>";
 		$kont = 0;
+		$kont2 = 0;
 		while($lerroa = $erantzuna->fetch_assoc()) {
 			if($kont==4){
 				echo "</tr><tr>";
@@ -23,6 +27,11 @@
 			}
 			else{
 				$kont ++;	
+			}
+			
+			if($kont2==0){
+				$kont2++;
+				echo "<input type='button' class='btnAtzera' onclick='atzeraBueltatu(\"".$erantzuna->fetch_assoc()['Egilea']."\")' value='Atzera bueltatu' />";
 			}
 			echo "<td>";
 			echo "	<img src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' onclick='argazkiaIkusi(".$lerroa['ID'].")' style='width: 200px;' /><br/>

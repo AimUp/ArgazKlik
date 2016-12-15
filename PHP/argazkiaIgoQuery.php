@@ -14,7 +14,7 @@
 	else if(strcmp($eskurag,"Atzipen mugatua")===0){$eskurag="atzipenMugatua";}
 	$data = date('Y-m-d H:i:s');
 	$deskribapena = $_POST['deskribapena'];
-	
+		
 	$query = "INSERT INTO argazkiak VALUES ('','$argazkia', '$egilea', '$albumID', '$eskurag', '$data', '$deskribapena');";
 
 	if($conn->query($query) === TRUE) {

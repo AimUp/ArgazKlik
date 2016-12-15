@@ -14,7 +14,10 @@
 				else {
 					argazkiaIgoFrame.style = "display: none";
 				}
-			}			
+			}
+			function atzeraBueltatu(nick){
+				window.location="profile.php?user="+nick;
+			}
 		</script>
 		<script type="text/javascript" src="../JS/argazkiak.js"></script>
 	</head>

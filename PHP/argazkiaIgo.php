@@ -37,7 +37,7 @@
 				Eskuragarritasuna:
 				<select id="eskuragarritasuna" name="eskuragarritasuna" ><br>
 					<option>Pribatua</option>
-					<option>Atzipen mugauta</option>
+					<option>Atzipen mugatua</option>
 					<option>Publikoa</option>
 					<!--<option>Kustomizatua</option>-->
 				</select><font color="red">*</font>

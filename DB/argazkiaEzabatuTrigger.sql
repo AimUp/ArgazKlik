@@ -1,0 +1,9 @@
+DELIMITER $$
+
+CREATE TRIGGER argazkiaEzabatu
+AFTER DELETE ON argazkiak FOR EACH ROW
+BEGIN
+	DELETE FROM taghitza WHERE ArgazkiID = OLD.ID;
+	DELETE FROM taglekua WHERE ArgazkiID = OLD.ID;
+	DELETE FROM tagpertsona WHERE ArgazkiID = OLD.ID;
+END $$
