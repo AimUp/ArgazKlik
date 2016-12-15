@@ -1,7 +1,8 @@
-DELIMITER $$
-
+DELIMITER //
+DROP TRIGGER IF EXISTS albumaEzabatu //
 CREATE TRIGGER albumaEzabatu
-AFTER DELETE ON albumak FOR EACH ROW
+BEFORE DELETE ON albumak FOR EACH ROW
 BEGIN
 	DELETE FROM argazkiak WHERE AlbumID = OLD.ID;
-END $$
+	DELETE FROM albumatzipenzerrenda WHERE AlbumID = OLD.ID;
+END; //
