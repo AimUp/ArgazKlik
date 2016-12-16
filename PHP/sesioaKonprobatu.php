@@ -6,7 +6,7 @@
 
 	function eremuBabestua(){
 		if(isset($_SESSION['login_user'])){
-			echo "<a href='profile.php'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+			echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
 			echo "<a href='logOut.php'>LogOut</a>";
 		}
 		else{
@@ -17,7 +17,7 @@
 
 	function eremuArrunta(){
 		if(isset($_SESSION['login_user'])){
-			echo "<a href='profile.php'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+			echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
 			echo "<a href='logOut.php'>LogOut</a>";
 		}
 		else{
@@ -28,7 +28,7 @@
 
 	function logEremua(){
 		if(isset($_SESSION['login_user'])){
-			header("Location: ./profile.php");
+			header("Location: ./profile.php?user=". strtolower($_SESSION['login_user']));
 			exit();
 		}
 		else{
@@ -40,7 +40,7 @@
 	function adminEremua(){
 		if(isset($_SESSION['login_user'])){
 			if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'administraria') {
-				echo "<a href='profile.php'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+				echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
 				echo "<a href='logOut.php'>LogOut</a>";
 			}
 			else{
@@ -57,7 +57,7 @@
 	function bazkideEremua(){
 		if(isset($_SESSION['login_user'])){
 			if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'bazkidea') {
-				echo "<a href='profile.php'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+				echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
 				echo "<a href='logOut.php'>LogOut</a>";
 			}
 			else{
