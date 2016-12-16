@@ -13,6 +13,14 @@
 				else {
 					albumSortzeFrame.style = "display: none";
 				}
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function(){
+					if ((xhttp.readyState==4)&&(xhttp.status==200)){
+						document.getElementById("albumak").innerHTML = xhttp.responseText;						
+					}
+				};
+				xhttp.open("GET","userAlbumQuery.php", true);
+				xhttp.send();
 			}
 		</script>
 	</head>
@@ -30,8 +38,12 @@
 			<section>
 				<?php
 					include "userInfoQuery.php"; 
+				?>
+				<div id="albumak">
+				<?PHP
 					include "userAlbumQuery.php";
 				?>
+				</div>
 				<div id="erabNav">
 					<table>
 						<tr>
@@ -47,7 +59,11 @@
 					</table>
 				</div>
 				<div id="edukia">
-					<input type="button" onclick="albumaSortu()" value="Album berria sortu"><br>
+					<?PHP
+						if(strcmp($_SESSION['login_user'],$_GET['user'])==0){
+							echo "<input type='button' onclick='albumaSortu()' value='Album berria sortu'><br>";
+						}
+					?>
 					<iframe id="albumaSortuIframe" src="albumaSortu.php" style="display:none"></iframe>
 					<p> 
 					<?php
