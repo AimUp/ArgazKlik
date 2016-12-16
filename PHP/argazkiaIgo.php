@@ -39,13 +39,9 @@
 					<option>Pribatua</option>
 					<option>Atzipen mugatua</option>
 					<option>Publikoa</option>
-					<!--<option>Kustomizatua</option>-->
 				</select><font color="red">*</font>
 				Deskribapena:
 				<textarea id="deskribapena" name="deskribapena" style="resize: none; width: 320px; height: 40px"></textarea><br /><br>
-				<!--<div id="divBesteak" style="display:none">
-					<br/><input type="text" id="customEskur" name="customEskur" placeholder="Eskuragarritasuna eukiku duten erabiltzaileak zehaztu" size="50">
-				</div><br/>-->
 				Argazkia: <input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])"><br/>
 				<img id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/>
 

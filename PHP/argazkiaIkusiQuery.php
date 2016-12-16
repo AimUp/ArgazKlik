@@ -14,7 +14,18 @@
 			<img src='data:Argazkia/jpeg;base64,".base64_encode( $lerroa['Argazkia'] )."' /><br/>";
 	if($lerroa['Deskribapena']!=""){
 		echo "<p>". $lerroa['Deskribapena'] ."</p>";
-	}
-			
+	}			
 	echo "</center>";
+	
+	echo "<div id='tagHitzak'>";
+	include "tagHitzakQuery.php";
+	echo "</div>";
+	
+	echo "<div id='tagLekuak'>";
+	include "tagLekuakQuery.php";
+	echo "</div>";
+	
+	echo "<div id='tagPertsonak'>";
+	include "tagPertsonakQuery.php";
+	echo "</div>";
 ?>

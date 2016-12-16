@@ -19,7 +19,7 @@
 						document.getElementById("albumak").innerHTML = xhttp.responseText;						
 					}
 				};
-				xhttp.open("GET","userAlbumQuery.php", true);
+				xhttp.open("GET","userAlbumQuery.php?user="+nick, true);
 				xhttp.send();
 			}
 		</script>
@@ -65,7 +65,7 @@
 						}
 					?>
 					<iframe id="albumaSortuIframe" src="albumaSortu.php" style="display:none"></iframe>
-					<p> 
+					<p>
 					<?php
 						if ($erantzuna->num_rows > 0) {
 							echo "<table class='albumTable'><tr>";

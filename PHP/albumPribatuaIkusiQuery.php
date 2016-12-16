@@ -9,7 +9,7 @@
 		
 	$erantzuna = $conn->query($query);	
 	
-	
+	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='Atzera bueltatu' />";
 	
 	echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
 
@@ -19,7 +19,6 @@
 		echo "<label class='albumIzena'><h2>".$_GET['albumIzena']."</h2></label>";
 		echo "<center><table><tr>";
 		$kont = 0;
-		$kont2 = 0;
 		while($lerroa = $erantzuna->fetch_assoc()) {
 			if($kont==4){
 				echo "</tr><tr>";
@@ -27,11 +26,6 @@
 			}
 			else{
 				$kont ++;	
-			}
-			
-			if($kont2==0){
-				$kont2++;
-				echo "<input type='button' class='btnAtzera' onclick='atzeraBueltatu(\"".$erantzuna->fetch_assoc()['Egilea']."\")' value='Atzera bueltatu' />";
 			}
 			echo "<td>";
 			echo "	<img src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' onclick='argazkiaIkusi(".$lerroa['ID'].")' style='width: 200px;' /><br/>

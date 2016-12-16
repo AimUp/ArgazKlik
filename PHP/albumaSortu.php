@@ -16,13 +16,10 @@
 			function albumBerriaSortu(){
 				var izena = document.getElementById("izena").value;
 				var eskurag = document.getElementById("eskuragarritasuna").value;
-				/*if(eskurag == "Kustomizatua"){
-					eskurag = document.getElementById("customEskur").value
-				}*/
-				xhttp = new XMLHttpRequest();
-				var param=""; 
+				var param="";
 				param += "izena="+izena+"&";
 				param += "eskurag="+eskurag;
+				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200)){
 						document.getElementById("erantzuna").innerHTML = xhttp.responseText;

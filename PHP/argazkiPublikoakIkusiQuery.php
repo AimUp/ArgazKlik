@@ -3,9 +3,15 @@
 			
 	$query = "SELECT argazkiak.ID AS argazkiID, argazkiak.Egilea, argazkiak.Argazkia, argazkiak.IgoeraData, argazkiak.Deskribapena, albumak.ID AS albumID, albumak.Izena "
 			."FROM argazkiak, albumak "
-			."WHERE albumak.Eskuragarritasuna='publikoa' "
-			."AND argazkiak.Eskuragarritasuna='publikoa' "
-			."AND albumak.ID = argazkiak.albumID "
+			."WHERE (albumak.Eskuragarritasuna='publikoa' "
+			."AND argazkiak.Eskuragarritasuna='publikoa') ";
+	
+	if(isset($SESSION['login_user'])){
+		$query .="OR (albumak.Eskuragarritasuna='atzipenMugatua' "
+		."AND argazkiak.Eskuragarritasuna='atzipenMugatua') ";
+	}
+	
+	$query .="AND albumak.ID = argazkiak.albumID "
 			."ORDER BY IgoeraData DESC";
 		
 	$erantzuna = $conn->query($query);
