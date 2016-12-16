@@ -5,8 +5,8 @@
 	if(strcmp($_GET['user'], $_SESSION['login_user'])!==0){
 		$query = "SELECT albumak.ID, albumak.Izena, albumak.SorreraData, albumak.Egilea "
 			."FROM albumak, albumatzipenzerrenda "
-			."WHERE Egilea='".$_GET['user']."'  ";
-			$query .= "AND "
+			."WHERE Egilea='".$_GET['user']."'  "
+			."AND "
 			."("
 				."Eskuragarritasuna = 'publikoa' "
 				."OR Eskuragarritasuna = 'atzipenMugatua' "
