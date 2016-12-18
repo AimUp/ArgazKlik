@@ -47,7 +47,7 @@
 				<div id="erabNav">
 					<table>
 						<tr>
-							<td rowspan="4" style="padding-right: 100px"><?php echo "<img src='data:Argazkia/jpeg;base64,".base64_encode($Argazkia)."' width='200px' />"; ?></td>
+							<td rowspan="4" style="padding-right: 100px"><?php echo "<img class='profilePic' src='data:Argazkia/jpeg;base64,".base64_encode($Argazkia)."' width='200px' />"; ?></td>
 						    <td><label class="parametroa">Nick: </label> <label class="balioa"><?php echo $Nick; ?></label></td>
 						</tr>
 						<tr>

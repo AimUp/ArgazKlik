@@ -11,12 +11,10 @@
 	
 	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='Atzera bueltatu' />";
 	
-	echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
-
-	echo "<input type='button' class='btnArgIgo' onclick='argazkiaIgo(".$_GET['albumID'].")' value='Argazkia igo' /><br>";
+	echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."'></iframe><br>";
 	
 	if ($erantzuna->num_rows > 0) {
-		echo "<label class='albumIzena'><h2>".$_GET['albumIzena']."</h2></label>";
+		echo "<br><br><label class='albumIzena'><h2>".$_GET['albumIzena']."</h2></label>";
 		echo "<center><table><tr>";
 		$kont = 0;
 		while($lerroa = $erantzuna->fetch_assoc()) {
@@ -28,7 +26,7 @@
 				$kont ++;	
 			}
 			echo "<td>";
-			echo "	<img src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' onclick='argazkiaIkusi(".$lerroa['ID'].")' style='width: 200px;' /><br/>
+			echo "	<img class='argazkia' src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' onclick='argazkiaIkusi(".$lerroa['ID'].")' style='width: 200px;' /><br/>
 					<label style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b>, </label>
 					<label style='margin-top:50px; text-align: left;'>". $lerroa['IgoeraData'] ."</label><br/>";
 			if($lerroa['Deskribapena']!=""){

@@ -47,7 +47,7 @@
 
 				<input type="text" name="albumID" id="albumID" value=<?PHP echo "\"".$_GET['albumID']."\""; ?> style="display: none;" />
 
-				<input type='submit' value='Sartu'/>
+				<input type='submit' value='Argazkia Igo' style="position: relative; bottom: 0%; left: 50%; transform: translate(-50%, 0%);	 padding: 5px; font-size: 16pt;"/>
 			</form>
 			<div id="errorea"></div>
 		</div>

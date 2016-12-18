@@ -13,7 +13,3 @@ function argazkiaIkusi(argazkiID){
 function argazkiHandiaPantailaOsoaItxi(){
 	document.getElementById("argazkiHandiaPantailaOsoa").style = "visibility: hidden";
 }
-
-function argazkiaEtiketatu(){
-	
-}

@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				<div id="argazkiHandiaPantailaOsoa" style="visibility:hidden" onclick="argazkiHandiaPantailaOsoaItxi()">
-					<div id="argazkiHandia" onclick="argazkiaEtiketatu()">
+					<div id="argazkiHandia">
 					</div>
 				</div>
 			</section>

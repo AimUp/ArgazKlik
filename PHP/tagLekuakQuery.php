@@ -7,11 +7,13 @@
 	$erantzuna = $conn->query($query);
 	
 	if ($erantzuna->num_rows > 0) {
+		echo "<div id='tagLekuak'>";
 		echo "<h3>Koordenatuak</h3>";
 		echo "<center>";
 			while($lerroa = $erantzuna->fetch_assoc()){
-				echo "<p>Latitudea :".$lerroa['LekuaLat']."<br> Longitudea: ".$lerroa['LekuaLong']."</p>"; 			
+				echo "<label>Latitudea: ".$lerroa['LekuaLat']."<br> Longitudea: ".$lerroa['LekuaLong']."</label>"; 			
 			}
 		echo "</center>";
+		echo "</div>";
 	}
 ?>
