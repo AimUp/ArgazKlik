@@ -5,9 +5,8 @@
 		<title>Argazklik</title>
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script>
-			function argazkiaIgo(albumID){
+			function argazkiaIgo(){
 				var argazkiaIgoFrame = document.getElementById("argazkiaIgoIframe");
-				argazkiaIgoFrame.src = "argazkiaIgo.php?albumID="+albumID;
 				if(argazkiaIgoFrame.style.display == "" || argazkiaIgoFrame.style.display == "none"){
 					argazkiaIgoFrame.style = "display: inline-block;";
 				}

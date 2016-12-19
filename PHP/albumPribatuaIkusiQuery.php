@@ -2,18 +2,23 @@
 	
 	include "CONNECT.php";
 			
-	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='Atzera bueltatu' />";
-
 	$query = "SELECT * FROM albumak WHERE ID = ".$_GET['albumID'];
 
 	$erantzuna = $conn->query($query);	
 	
+	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='' />";
+	echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' />";
+
+
 	if ($erantzuna->num_rows > 0) {
 		$lerroa = $erantzuna->fetch_assoc();
 		echo "<label class='albumIzena'><h2>".$lerroa['Izena']."</h2></label>";
 		if($_SESSION['login_user']==$lerroa['Egilea']){
-			echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."'></iframe><br>";
+			echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
 		}
+	}
+	else{
+		header("Location: ./layout.php");
 	}
 
 	$query = "SELECT ID, Egilea, Argazkia, IgoeraData, Deskribapena "
@@ -46,6 +51,6 @@
 		echo "</tr></table></center>";
 	}
 	else{
-		echo "Ez dago argazkirik";
+		echo "<br/><center><label class='errorea'>Ez dago argazkirik</label></center>";
 	}
 ?>

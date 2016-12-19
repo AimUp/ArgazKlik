@@ -20,7 +20,7 @@
 		echo "<center><table><tr>";
 		$kont = 0;
 		while($lerroa = $erantzuna->fetch_assoc()) {
-			if($kont==3){
+			if($kont==4){
 				echo "</tr><tr>";
 				$kont = 1;	
 			}

@@ -126,6 +126,25 @@ td {
 	top: 35%;
 	left: 8%;
 	transform: translate(-50%, -50%);
+	border: none;
+	background: url(../IMG/atzera.png) no-repeat;
+	background-size: 30px 30px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.btnGehitu {
+	position: absolute;
+	top: 35%;
+	left: 12%;
+	transform: translate(-50%, -50%);
+	border: none;
+	background: url(../IMG/gehitu.png) no-repeat;
+	background-size: 30px 30px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
 }
 
 .btnArgIgo {

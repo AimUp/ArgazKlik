@@ -48,13 +48,13 @@
 					<table>
 						<tr>
 							<td rowspan="4" style="padding-right: 100px"><?php echo "<img class='profilePic' src='data:Argazkia/jpeg;base64,".base64_encode($Argazkia)."' width='200px' />"; ?></td>
-						    <td><label class="parametroa">Nick: </label> <label class="balioa"><?php echo $Nick; ?></label></td>
+						    <td style="text-align: left;"><label class="parametroa">Nick: </label> <label class="balioa"><?php echo $Nick; ?></label></td>
 						</tr>
 						<tr>
-						    <td><label class="parametroa">Eposta: </label> <label class="balioa"><?php echo $Eposta; ?></label></td>
+						    <td style="text-align: left;"><label class="parametroa">Eposta: </label> <label class="balioa"><?php echo $Eposta; ?></label></td>
 						</tr>
 						<tr>
-							<td><label class="parametroa">Izen Abizenak: </label> <label class="balioa"><?php echo $IzenAbizen; ?></label></td>
+							<td style="text-align: left;"><label class="parametroa">Izen Abizenak: </label> <label class="balioa"><?php echo $IzenAbizen; ?></label></td>
 						</tr>
 					</table>
 				</div>
