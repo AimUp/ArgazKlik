@@ -7,13 +7,13 @@
 	$erantzuna = $conn->query($query);	
 	
 	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='' />";
-	echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' />";
-
 
 	if ($erantzuna->num_rows > 0) {
 		$lerroa = $erantzuna->fetch_assoc();
 		echo "<label class='albumIzena'><h2>".$lerroa['Izena']."</h2></label>";
 		if($_SESSION['login_user']==$lerroa['Egilea']){
+			echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' />";
+			echo "<input type='button' class='btnEzabatu' onclick='' value='' />";
 			echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
 		}
 	}

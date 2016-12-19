@@ -147,6 +147,19 @@ td {
 	cursor: pointer;
 }
 
+.btnEzabatu {
+	position: absolute;
+	top: 35%;
+	left: 16%;
+	transform: translate(-50%, -50%);
+	border: none;
+	background: url(../IMG/ezabatu.png) no-repeat;
+	background-size: 30px 30px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
 .btnArgIgo {
 	position: absolute;
 	left: 50%;
