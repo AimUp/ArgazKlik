@@ -9,14 +9,6 @@
 				document.getElementById('argazkiAurrekarga').style.display = 'inline';
 				document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);
 			}
-			/*function eskuragarritasunaBesteak() {
-				if(document.getElementById("eskuragarritasuna").value=="Kustomizatua"){
-					document.getElementById("customEskur").style.display = "inline";
-				}
-				else {
-					document.getElementById("customEskur").style.display = "none";
-				}
-			}*/
 			function checkArgazkia(){
 				var argazkia = document.getElementById('argazkia').files[0];
 				if(argazkia==null){

@@ -2,19 +2,28 @@
 	
 	include "CONNECT.php";
 			
+	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='Atzera bueltatu' />";
+
+	$query = "SELECT * FROM albumak WHERE ID = ".$_GET['albumID'];
+
+	$erantzuna = $conn->query($query);	
+	
+	if ($erantzuna->num_rows > 0) {
+		$lerroa = $erantzuna->fetch_assoc();
+		echo "<label class='albumIzena'><h2>".$lerroa['Izena']."</h2></label>";
+		if($_SESSION['login_user']==$lerroa['Egilea']){
+			echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."'></iframe><br>";
+		}
+	}
+
 	$query = "SELECT ID, Egilea, Argazkia, IgoeraData, Deskribapena "
-			."FROM argazkiak "
-			."WHERE albumID = ".$_GET['albumID']." "
-			."ORDER BY IgoeraData DESC";
+		."FROM argazkiak "
+		."WHERE albumID = ".$_GET['albumID']." "
+		."ORDER BY IgoeraData DESC";
 		
 	$erantzuna = $conn->query($query);	
 	
-	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='Atzera bueltatu' />";
-	
-	echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."'></iframe><br>";
-	
 	if ($erantzuna->num_rows > 0) {
-		echo "<br><br><label class='albumIzena'><h2>".$_GET['albumIzena']."</h2></label>";
 		echo "<center><table><tr>";
 		$kont = 0;
 		while($lerroa = $erantzuna->fetch_assoc()) {

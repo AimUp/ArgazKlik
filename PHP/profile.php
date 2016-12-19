@@ -72,7 +72,7 @@
 							while($lerroa = $erantzuna->fetch_assoc()) {			
 								echo "<td>";
 								echo "<div>";
-								echo "<img class='folder' src='../IMG/Folder.png' onclick='window.location=\"userAlbumEdukiaIkusi.php?albumID=".$lerroa['ID']."&albumIzena=".$lerroa['Izena']."\"' width='50px'/><br/>";
+								echo "<img class='folder' src='../IMG/Folder.png' onclick='window.location=\"userAlbumEdukiaIkusi.php?albumID=".$lerroa['ID']."\"' width='50px'/><br/>";
 								echo $lerroa['Izena']."<br/>";
 								echo $lerroa['Egilea']."<br/>";
 								echo $lerroa['SorreraData']."<br/><br/>";
