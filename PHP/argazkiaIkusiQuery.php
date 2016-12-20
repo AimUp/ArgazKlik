@@ -1,5 +1,4 @@
 <?php
-
 	echo "<link rel='stylesheet' type='text/css' href='../CSS/argazkiakIkusi.css' />";
 
 	include "CONNECT.php";
@@ -22,4 +21,5 @@
 	include "tagHitzakQuery.php";	
 	include "tagLekuakQuery.php";	
 	include "tagPertsonakQuery.php";
+	include "tagSartu.php";	
 ?>

@@ -43,7 +43,7 @@
 			<section>
 				<div id="edukia">
 					<div id="argazkiak">
-						<?PHP
+						<?php	
 							include "argazkiPublikoakIkusiQuery.php";
 						?>
 					</div>

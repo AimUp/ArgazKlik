@@ -55,7 +55,9 @@ h3 {
 	overflow: auto;
 }
 
-#tagHitzak, #tagLekuak, #tagPertsonak {	
+#tagHitzak, #tagLekuak, #tagPertsonak, #tagGehitu{	
+	width: 300px;
+	height: 100px;
 	background-color: #e1f5fe;
 	border: 1px dotted #AAF;
 	border-radius: 6px;	
@@ -66,20 +68,32 @@ h3 {
 #tagHitzak {
 	position: fixed;
 	top: 8%;
-	left: 8%;
+	left: 6%;
 	max-height: 38%;
 }
 
 #tagLekuak {
 	position: fixed;
-	top: 50%;
-	left: 8%;
+	top: 8%;
+	left: 50%;
+	margin-left: -150px; /* Negative half of width. */
 	max-height: 38%;
 }
 
 #tagPertsonak {
 	position: fixed;
 	top: 8%;
-	right: 8%;
+	right: 6%;
 	max-height: 80%;
+}
+
+#tagGehitu {
+	background-color: #e1feea;
+	border: 1px dotted #77ff77;
+	position: fixed;
+	top: 85%;
+	left: 50%;
+	margin-top: -50px; /* Negative half of height. */
+	margin-left: -150px; /* Negative half of width. */
+	max-height: 38%;
 }

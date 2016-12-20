@@ -61,7 +61,7 @@
 				<div id="edukia">
 					<?PHP
 						if(strcmp($_SESSION['login_user'],$_GET['user'])==0){
-							echo "<input type='button' onclick='albumaSortu()' value='Album berria sortu'><br>";
+							echo "<input type='button' class='btnGehitu' onclick='albumaSortu()' value=''><br>";
 						}
 					?>
 					<iframe id="albumaSortuIframe" src="albumaSortu.php" style="display:none"></iframe>

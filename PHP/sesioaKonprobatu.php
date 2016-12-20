@@ -38,19 +38,11 @@
 	}
 
 	function adminEremua(){
-		if(isset($_SESSION['login_user'])){
-			if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'administraria') {
-				echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
-				echo "<a href='logOut.php'>LogOut</a>";
-			}
-			else{
-				header("Location: ./layout.php");
-				exit();
-			}
-		}
-		else{
+		if(!isset($_SESSION['login_user'])){
 			header("Location: ./layout.php");
-			exit();
+		}
+		elseif (!(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'administraria')) {
+			header("Location: ./layout.php");
 		}
 	}
 

@@ -1,5 +1,6 @@
 <?php
 	include "sesioaKonprobatu.php";
+	adminEremua();
 ?>
 
 <!DOCTYPE html>
@@ -113,7 +114,8 @@
 		<div id='page-wrap'>
 			<div id="logeatzeko">
 				<?php 
-					adminEremua();
+					echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+					echo "<a href='logOut.php'>LogOut</a>";
 				?>
 			</div></br>
 			<header>

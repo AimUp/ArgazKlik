@@ -6,15 +6,18 @@
 
 	$erantzuna = $conn->query($query);	
 	
-	echo "<input type='button' class='btnAtzera' onclick=\"history.go(-1)\" value='' />";
+	echo "<table style='width: 100%;'><tr><th><input type='buton' class='btnAtzera' onclick=\"history.go(-1)\" value='' /></th>";
 
 	if ($erantzuna->num_rows > 0) {
 		$lerroa = $erantzuna->fetch_assoc();
-		echo "<label class='albumIzena'><h2>".$lerroa['Izena']."</h2></label>";
+		echo "<th style='width: 100%''><label class='albumIzena'><h2>".$lerroa['Izena']."</h2></label></th></tr></table>";
 		if($_SESSION['login_user']==$lerroa['Egilea']){
-			echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' />";
+			echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' /> &emsp;";
 			echo "<input type='button' class='btnEzabatu' onclick='' value='' />";
 			echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
+		}
+		else{
+			echo "</tr></table>";
 		}
 	}
 	else{
