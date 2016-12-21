@@ -28,10 +28,6 @@
 	padding: 20px;
 }
 
-h3 {
-	text-align: center;
-}
-
 .argazkiIzenburua, .argazkiDeskribapena{
 	position: absolute;
 	transform: translate(-50%, 0%);	
@@ -57,12 +53,13 @@ h3 {
 
 #tagHitzak, #tagLekuak, #tagPertsonak, #tagGehitu{	
 	width: 300px;
-	height: 100px;
+	min-height: 100px;
 	background-color: #e1f5fe;
 	border: 1px dotted #AAF;
 	border-radius: 6px;	
 	width: 20%;
-	padding: 10px;
+	padding: 1%;
+	overflow: auto;
 }
 
 #tagHitzak {
@@ -74,10 +71,10 @@ h3 {
 
 #tagLekuak {
 	position: fixed;
-	top: 8%;
-	left: 50%;
-	margin-left: -150px; /* Negative half of width. */
-	max-height: 38%;
+	top: 45%;
+	left: 6%;
+	/*margin-left: -150px; /* Negative half of width. */
+	max-height: 38%;	
 }
 
 #tagPertsonak {
@@ -96,4 +93,26 @@ h3 {
 	margin-top: -50px; /* Negative half of height. */
 	margin-left: -150px; /* Negative half of width. */
 	max-height: 38%;
+}
+
+.tagsartubotoia {
+	background-color: #FFF;
+	border: 2px solid #AAF;
+	border-radius: 10px;	
+}
+
+.argazkiHandiaItxi {
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	height: 20px;
+	width: 20px;
+	border-radius: 5px;
+	background-color: #FFA07A;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
 }

@@ -48,7 +48,7 @@
 						?>
 					</div>
 				</div>
-				<div id="argazkiHandiaPantailaOsoa" style="visibility:hidden" onclick="argazkiHandiaPantailaOsoaItxi()">
+				<div id="argazkiHandiaPantailaOsoa" style="visibility:hidden">
 					<div id="argazkiHandia">
 					</div>
 				</div>

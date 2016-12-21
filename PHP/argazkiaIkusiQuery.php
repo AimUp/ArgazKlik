@@ -1,7 +1,10 @@
 <?php
 	echo "<link rel='stylesheet' type='text/css' href='../CSS/argazkiakIkusi.css' />";
+	
+	echo "<span class='argazkiHandiaItxi' onclick='argazkiHandiaPantailaOsoaItxi()'>X</span>";
 
 	include "CONNECT.php";
+	include "sesioaKonprobatu.php";
 
 	$query = "SELECT argazkiak.Egilea, argazkiak.albumID, albumak.Izena AS albumIzena, argazkiak.IgoeraData, argazkiak.Deskribapena, argazkiak.Argazkia "
 			."FROM argazkiak, albumak "
@@ -20,6 +23,5 @@
 	
 	include "tagHitzakQuery.php";	
 	include "tagLekuakQuery.php";	
-	include "tagPertsonakQuery.php";
-	include "tagSartu.php";	
+	include "tagPertsonakQuery.php";	
 ?>
