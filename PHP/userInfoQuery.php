@@ -13,4 +13,7 @@
 		$IzenAbizen = $lerroa['IzenAbizenak'];
 		$Argazkia = $lerroa['Argazkia'];
 	}
+	else{
+		header("Location: ./layout.php");
+	}
 ?>

@@ -29,7 +29,7 @@
 			}
 			echo "<td>";
 			echo "	<img class='cursorPointer argazkia' src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' style='width: 200px;' onclick='argazkiaIkusi(".$lerroa['argazkiID'].")' /><br/>
-					<label class='cursorPointer' onclick=\"window.location='profile.php?user=". $lerroa['Egilea'] ."'\" style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b></label> - <label class='cursorPointer' onclick='window.location=\"userAlbumEdukiaIkusi.php?albumID=".$lerroa['albumID']."&albumIzena=".$lerroa['albumIzena']."\"'><b>".$lerroa['albumIzena']."</b></label>";
+					<label class='cursorPointer' onclick=\"window.location='profile.php?user=". $lerroa['Egilea'] ."'\" style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b></label> - <label class='cursorPointer' onclick='window.location=\"userAlbumEdukiaIkusi.php?albumID=".$lerroa['albumID']."\"'><b>".$lerroa['albumIzena']."</b></label>";
 			echo "</td>";
 		}
 		echo "</tr></table></center>";

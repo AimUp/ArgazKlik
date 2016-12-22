@@ -23,7 +23,7 @@
 						document.getElementById("argazkiak").innerHTML = xhttp.responseText;
 					}
 				};
-				xhttp.open("GET","../PHP/albumPublikoaIkusiQuery.php?albumID="+albumID+"&albumIzena="+albumIzena, true);
+				xhttp.open("GET","../PHP/albumPublikoaIkusiQuery.php?albumID="+albumID, true);
 				xhttp.send();
 			}
 		</script>

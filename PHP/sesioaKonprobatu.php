@@ -1,5 +1,4 @@
 <?php
-
 	if (session_status() == PHP_SESSION_NONE) {
 		session_start();
 	}
@@ -17,8 +16,14 @@
 
 	function eremuArrunta(){
 		if(isset($_SESSION['login_user'])){
-			echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
-			echo "<a href='logOut.php'>LogOut</a>";
+			if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'bazkidea') {
+				echo "<a href='profile.php?user=".strtolower($_SESSION['login_user'])."'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+				echo "<a href='logOut.php'>LogOut</a>";
+			}
+			else{
+				echo "<a href='administraria.php'>" . strtolower($_SESSION['login_user']) . "</a><br/>";
+				echo "<a href='logOut.php'>LogOut</a>";
+			}
 		}
 		else{
 			echo "<a href='./logIn.php'>Log In</a><br/>";
