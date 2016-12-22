@@ -26,11 +26,14 @@ div.show-image {
     cursor: pointer;
 
     width: 80px;
+    height: 20px;
     position:absolute;
     display:none;
 
     top:50%;
-    left:60px;
+    left:50%;
+    margin-left: -40px;
+    margin-top: -10px;
 }
 
 .show-image input:hover {
