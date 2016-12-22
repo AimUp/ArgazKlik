@@ -4,7 +4,7 @@
 	$id = $_GET['ID'];
 	
 
-	$query = "DELETE FROM Argazkiak WHERE ID='$id'";
+	$query = "DELETE FROM argazkiak WHERE ID='$id'";
 
 	if($conn->query($query) === FALSE){
 		echo "Datuak ez dira ezabatu: " . $conn->error;
