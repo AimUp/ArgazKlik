@@ -11,14 +11,19 @@
 	if ($erantzuna->num_rows > 0) {
 		$lerroa = $erantzuna->fetch_assoc();
 		echo "<th style='width: 100%''><label class='albumIzena'><h2>".$lerroa['Izena']."</h2></label></th></tr></table>";
-		if($_SESSION['login_user']==$lerroa['Egilea']){
-			echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' /> &emsp;";
-			echo "<input type='button' class='btnEzabatu' onclick='ezabatzeModua()' value='' />";
-			echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
+		if (isset($_SESSION['login_user'])) {
+			if($_SESSION['login_user']==$lerroa['Egilea']){
+				echo "<input type='button' class='btnGehitu' onclick='argazkiaIgo()' value='' /> &emsp;";
+				echo "<input type='button' class='btnEzabatu' onclick='ezabatzeModua()' value='' />";
+				echo "<iframe id='argazkiaIgoIframe' src='argazkiaIgo.php?albumID=".$_GET['albumID']."' style='display:none'></iframe><br>";
+			}
+			else{
+				echo "</tr></table>";
+			}
 		}
 		else{
 			echo "</tr></table>";
-		}
+		}	
 	}
 	else{
 		header("Location: ./layout.php");
@@ -44,8 +49,10 @@
 			}
 			echo "<td>";
 			echo "<div class='show'><img class='argazkia' src='data:image/png;base64,".base64_encode( $lerroa['Argazkia'] )."' onclick='argazkiaIkusi(".$lerroa['ID'].")' style='width: 200px;' />";
-			if($_SESSION['login_user']==$lerroa['Egilea']){
-				echo "<input class='ezabatuBotoia' type='button' value='EZABATU' onclick='ezabatuArgazkia(".$lerroa['ID'].")' style='display: none'></input>";
+			if(isset($_SESSION['login_user'])){
+				if($_SESSION['login_user']==$lerroa['Egilea']){
+					echo "<input class='ezabatuBotoia' type='button' value='EZABATU' onclick='ezabatuArgazkia(".$lerroa['ID'].")' style='display: none'></input>";
+				}
 			}
 			echo "</div>";
 			echo"<br/><label style='margin-top:50px; text-align: left;'><b>". $lerroa['Egilea'] ."</b>, </label>

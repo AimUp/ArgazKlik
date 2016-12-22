@@ -54,7 +54,7 @@
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
-					bazkideEremua();
+					eremuArrunta();
 				?>
 			</div></br>
 			<header>

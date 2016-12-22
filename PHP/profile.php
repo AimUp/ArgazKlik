@@ -29,7 +29,7 @@
 			<div id="logeatzeko">
 				<?php 
 					include "sesioaKonprobatu.php";
-					bazkideEremua();
+					eremuArrunta();
 				?>
 			</div></br>
 			<header>
@@ -60,8 +60,10 @@
 				</div>
 				<div id="edukia">
 					<?PHP
-						if(strcmp($_SESSION['login_user'],$_GET['user'])==0){
-							echo "<input type='button' class='btnGehitu' onclick='albumaSortu()' value=''><br>";
+						if(isset($_SESSION['login_user'])){
+							if(strcmp($_SESSION['login_user'],$_GET['user'])==0){
+								echo "<input type='button' class='btnGehitu' onclick='albumaSortu()' value=''><br>";
+							}
 						}
 					?>
 					<iframe id="albumaSortuIframe" src="albumaSortu.php" style="display:none"></iframe>
