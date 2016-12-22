@@ -11,10 +11,9 @@
 		echo "<h3>Hitzak</h3>";
 		if ($erantzuna->num_rows > 0) {
 			while($lerroa = $erantzuna->fetch_assoc()){
-				echo $lerroa['Hitza'].".&nbsp;&nbsp; "; 			
+				echo "<label class='cursorPointer' onclick=\"window.location='argazkiaktagikusi.php?hitza=".$lerroa['Hitza']."'\">#".$lerroa['Hitza']."</label><br/> ";				
 			}
 		}
-		echo "<br>";
 		echo "<br>";
 		if(isset($_SESSION['login_user'])){
 			$query = "SELECT Egilea "

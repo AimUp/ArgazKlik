@@ -84,17 +84,6 @@
 	max-height: 80%;
 }
 
-#tagGehitu {
-	background-color: #e1feea;
-	border: 1px dotted #77ff77;
-	position: fixed;
-	top: 85%;
-	left: 50%;
-	margin-top: -50px; /* Negative half of height. */
-	margin-left: -150px; /* Negative half of width. */
-	max-height: 38%;
-}
-
 .tagsartubotoia {
 	background-color: #FFF;
 	border: 2px solid #AAF;

@@ -11,10 +11,9 @@
 	echo "<h3>Jendea</h3>";
 	if ($erantzuna->num_rows > 0) {
 		while($lerroa = $erantzuna->fetch_assoc()){
-			echo "<label class='cursorPointer' onclick=\"window.location='profile.php?user=". $lerroa['Nickname'] ."'\">".$lerroa['Nickname']."</label> ";	
+			echo "<label class='cursorPointer' onclick=\"window.location='profile.php?user=". $lerroa['Nickname'] ."'\">".$lerroa['Nickname']."</label><br/> ";	
 		}		
 	}
-	echo "<br>";
 	echo "<br>";
 	if(isset($_SESSION['login_user'])){
 		$query = "SELECT Egilea "

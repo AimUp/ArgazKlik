@@ -4,6 +4,7 @@
 		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
 		<title>Argazklik</title>
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
+		<script type="text/javascript" src="../JS/argazkiak.js"></script>
 		<script>
 			function argazkiaIgo(){
 				var argazkiaIgoFrame = document.getElementById("argazkiaIgoIframe");
